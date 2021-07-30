@@ -38,9 +38,113 @@
 			<main>
 				<h1>Order Event Tickets</h1>
 				<!-- The form starts here... -->
+				<form name="order_form" action="place_order.html" method="post">
 				
+				<!-- Member Information Form -->				
+				<fieldset> 
+				<legend>Member Information</legend>
+					<label for="email_form">E-mail:</label>
+					<input type ="email" name= "email_form" id = "email_form" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+					title="Accepted form: example@email.com" autofocus required> <br><br>
+					<label for="fname">First Name:</label>
+					<input type="text" name= "fname" id = "fname" required> <br><br>
+					<label for="lname">Last Name:</label>
+					<input type="text" name="lname" id= "lname" required> <br><br>
+					<label for="address">Address:</label>
+					<input type= "text" name= "address" id= "address"> <br><br>
+					<label for="city">City:</label>
+					<input type ="text" name="city" id="city" required> <br><br>
+					<label for="province">Province:</label>
+					<input type="text" name="province" id="province" pattern="[A-Za-z]{2}" 
+					title="Accepted format: ON, BC, etc." placeholder="2-character code" required> <br><br>
+					<label for="postal_code">Postal Code:</label>
+					<input type="text" name="postal_code" id="postal_code" pattern="[A-Za-z0-9]{6}" 
+					title="Accepted format: A1BC2D with no dashes" placeholder="6 characters" required> <br><br>
+					<label for="phone_num">Phone Number:</label>
+					<input type="tel" name="phone_num" id="phone_num" pattern="\d{3}[\-]\d{3}[\-]\d{4}" 
+					title="Accepted format: 999-999-9999" placeholder="999-999-9999"> <br><br>
+				</fieldset>
+				
+				<!-- Ordering Information Form -->					
+				<fieldset>
+				<legend>Ordering Information</legend>
+					<label for="event_form">Event:</label>
+					<select name="event_form">
+						<option value="cookie_dec_contest">Cookie Decoration Contest</option>
+						<option value="tree_dec_contest">Tree Decoration Contest</option>
+						<option value="gift_of_light_ridealong">Gift Of Light Ride-Along</option>
+						<option value="breakfast_w_santa">Breakfast With Santa</option>
+					</select>
+					<br><br>
+					<label for="order_form">Order:</label> 
+					<select name="order_form" class="size">
+						<option value="member_pkg">Member Package</option>
+						<option value="donor_pkg">Donor Package</option>
+						<option value="single_tickets">Single Tickets</option>
+					</select>
+					<br><br>
+					<label for="number_of_tickets">Number of Tickets:</label>
+					<input type="number" name="number_of_tickets" id="number_of_tickets" min="1" 
+					title="Accepted format: 1, 100, 1000 etc." placeholder="Number of single tickets">
+				</fieldset>
+				
+				<!-- Payment Method Form -->					
+				<fieldset id="payment_method">
+				<legend>Payment Method</legend>
+					<input type="radio" name="payment_method" id="bill_me" value="bill_me">
+					<label for="bill_me">Bill Me</label>
+					<input type="radio" name="payment_method" id="credit_card" value="credit_card">
+					<label for="credit_card">Credit Card</label>
+				</fieldset>
+				
+				<!-- Credit Card Information Form -->	
+				<fieldset>
+					<legend>Credit Card Information</legend>
+					<label for="card_type">Card Type:</label>
+						<select name="card_type" class="size">
+							<option value="visa">Visa</option>
+							<option value="mastercard">Master Card</option>
+							<option value="discover">Discover</option>
+						</select>
+					<br><br>
+					<label for="card_number">Card Number:</label>
+					<input type="text" name="card_number" id="card_number" pattern="^\d{4}\d{4}\d{4}\d{4}$" 
+					title="Accepted format: 16 digits like 1234567890123456" placeholder="16 digits" required>
+				<br><br>
+				<label for="expiration_date">Expiration Date:</label>
+				<select name="exp_month" id="exp_month_size">
+					<option value="january">January</option>
+					<option value="february">February</option>
+					<option value="march">March</option>
+					<option value="april">April</option>
+					<option value="may">May</option>
+					<option value="june">June</option>
+					<option value="july">July</option>
+					<option value="august">August</option>
+					<option value="september">September</option>
+					<option value="october">October</option>
+					<option value="november">November</option>
+					<option value="decemeber">December</option>
+				</select>
+				<select name="exp_year" id="exp_year_size">
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+					<option value="2024">2024</option>
+					<option value="2025">2025</option>
+					<option value="2026">2026</option>
+					<option value="2027">2027</option>
+				</select>
+				</fieldset>
+				
+				<!-- Submit Your Order Form -->
+				<fieldset>
+				<legend>Submit Your Order</legend>
+					<input type="submit" name="submit_form" value="Submit">
+					<input type="reset" name="reset_form" value="Reset Fields">
+				</fieldset>
+			</form>
 			</main>
-			
 			<footer>
 				<p>&copy; 2021 New Year Central. Created by Johnny White.</p>
 			</footer>
